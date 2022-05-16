@@ -53,4 +53,14 @@ class ProvinceTest < Minitest::Test
     assert_raises(NoMethodError) {asia.shortfall}
     assert_raises(ArgumentError) {asia.profit}
   end
+
+  def test_string_for_producers
+    data = {
+      name: "String producers",
+      producers: "",
+      demand: 30,
+      price: 20
+    }
+    assert_raises(NoMethodError) {Province.new(data)}
+  end
 end
